@@ -152,5 +152,5 @@ Each JSON object contains:
 --------
 
 <div align="center">
-  tenantfinder is made with ❤️ by [Upmux Security](https://upmux.com) and distributed under [MIT License](LICENSE).
+  tenantfinder is made with ❤️ by <a href="https://upmux.com">Upmux Security</a> and distributed under <a href="LICENSE.md">MIT License</a>.
 </div>
