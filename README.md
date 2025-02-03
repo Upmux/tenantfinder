@@ -19,6 +19,8 @@ A fast, non-intrusive tool that helps discover domains and subdomains that are i
 
 This project is heavily inspired by the awesome tools from [ProjectDiscovery](https://github.com/projectdiscovery) like [subfinder](https://github.com/projectdiscovery/subfinder), [urlfinder](https://github.com/projectdiscovery/urlfinder) and [tldfinder](https://github.com/projectdiscovery/tldfinder).
 
+![example](https://github.com/user-attachments/assets/d13848fa-384d-4d8f-8513-7dd9a932ebc0)
+
 
 ## Features
 
