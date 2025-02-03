@@ -1,0 +1,10 @@
+.DS_Store
+# tenantfinder binary when built with `go build`
+cmd/tenantfinder/tenantfinder
+# tenantfinder binary when built with `make`
+tenantfinder
+vendor/
+.idea
+.devcontainer
+.vscode
+dist
