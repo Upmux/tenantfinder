@@ -56,19 +56,13 @@ func (r *Runner) EnumerateSingleDomainWithCtx(ctx context.Context, domain string
 				tenantDomain := replacer.Replace(result.Value)
 				tenantDomain = preprocessDomain(tenantDomain)
 
-				if _, ok := uniqueMap[domain]; !ok {
-					sourceMap[domain] = make(map[string]struct{})
+				if _, ok := uniqueMap[tenantDomain]; !ok {
+					sourceMap[tenantDomain] = make(map[string]struct{})
 				}
 
-				// Log the verbose message about the found subdomain per source
-				if _, ok := sourceMap[domain][result.Source]; !ok {
-					gologger.Verbose().Label(result.Source).Msg(domain)
-				}
+				sourceMap[tenantDomain][result.Source] = struct{}{}
 
-				sourceMap[domain][result.Source] = struct{}{}
-
-				// Check if the subdomain is a duplicate.
-				if _, ok := uniqueMap[domain]; ok {
+				if _, ok := uniqueMap[tenantDomain]; ok {
 					skippedCounts[result.Source]++
 					continue
 				}
@@ -79,10 +73,6 @@ func (r *Runner) EnumerateSingleDomainWithCtx(ctx context.Context, domain string
 		// Close the task channel only if wildcards are asked to be removed
 		wg.Done()
 	}()
-
-	// If the user asked to remove wildcards, listen from the results
-	// queue and write to the map. At the end, print the found results to the screen
-	// foundResults := make(map[string]resolve.Result)
 
 	wg.Wait()
 	outputWriter := NewOutputWriter(r.options.JSON)
