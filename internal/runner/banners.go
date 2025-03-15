@@ -16,7 +16,7 @@ const banner = `
 const ToolName = `tenantfinder`
 
 // Version is the current version of tenantfinder
-const version = `v0.0.2`
+const version = `v0.0.3`
 
 // showBanner is used to show the banner to the user
 func showBanner() {
